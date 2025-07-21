@@ -1,7 +1,7 @@
 # CSCE-3600.001-Major-2
 ## The Shell and System Calls
 
-### Team Members:
+### Group 3 Team Members:
 - Mary Adeeko
 - Hema Thallapareddy
 - Pranav Dubey
