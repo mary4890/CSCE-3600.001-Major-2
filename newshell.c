@@ -98,13 +98,7 @@ void execute_command(char *line) // Implemented by Pranav Dubey
 
     // Signal handling
 
-    // Pipelining - Implemented by Mary Adeeko
-if (!parse_command(line, args, &outfile))
-{
-    print_error();
-    return;
-}
-if (args[0] == NULL) return;
+
 
 
     // Alias
