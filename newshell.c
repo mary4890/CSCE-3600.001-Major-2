@@ -58,7 +58,26 @@ void execute_command(char *line) // Implemented by Pranav Dubey
 
     // Exit
 
-    // Cd
+    // Cd - Implemented by Mary Adeeko
+    if (strcmp(args[0], "cd") == 0)
+{
+    if (args[1] == NULL)
+    {
+        char *home = getenv("HOME");
+        if (home == NULL || chdir(home) !=0 )
+        {
+            print_error();
+        }
+    }
+    else
+    {
+        if (chdir(args[1]) != 0)
+        {
+            print_error();
+        }
+    }
+    return;
+}
 
     // Myhistory
 
