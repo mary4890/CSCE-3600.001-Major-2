@@ -43,6 +43,12 @@ void trim_newline(char *line) // implemented by Mary Adeeko
 //Execute commands
 void execute_command(char *line) // Implemented by Pranav Dubey
 {
+    //Check pipe first - Implemented by Mary Adeeko
+    if (strchr(line, '|') != NULL)
+    {
+        handle_pipeline(line);
+        return;
+    }
     // add_history(line); // Needs to be implemented in builtsin.c first before uncommenting this, otherwise program won't run on tests
 
     char *args[MAX_ARGS];
@@ -93,12 +99,6 @@ void execute_command(char *line) // Implemented by Pranav Dubey
     // Signal handling
 
     // Pipelining - Implemented by Mary Adeeko
-    if (strchr(line, '|') != NULL)
-{
-    handle_pipeline(line);
-    return;
-}
-
 if (!parse_command(line, args, &outfile))
 {
     print_error();
