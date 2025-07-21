@@ -2,8 +2,7 @@
 //Mary Adeeko, Hema Thallapareddy, Pranav Dubey, Luke Marlin
 //CSCE 3600.001
 //21 July 2025
-//This program will allow users to enter commands in a terminal, it supports
-//interactive mode and batch mode.
+//Description: This program will allow users to enter commands in a terminal, it supports interactive mode and batch mode.
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -14,6 +13,7 @@
 #include "builtins.h"
 #include "path.h"
 #include "redirection.h"
+#include "parser.h"
 
 #define MAX_ARGS 100
 #define MAX_HISTORY 100
