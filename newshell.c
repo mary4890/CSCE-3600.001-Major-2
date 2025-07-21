@@ -99,9 +99,6 @@ void execute_command(char *line) // Implemented by Pranav Dubey
     return;
 }
 
-char *args[MAX_ARGS];
-char *outfile;
-
 if (!parse_command(line, args, &outfile))
 {
     print_error();
