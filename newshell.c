@@ -42,12 +42,15 @@ void trim_newline(char *line) // implemented by Mary Adeeko
 //Execute commands
 void execute_command(char *line) // Implemented by Pranav Dubey
 {
-    add_history(line);
+    // add_history(line); // Needs to be implemented in builtsin.c first before uncommenting this, otherwise program won't run on tests
 
     char *args[MAX_ARGS];
     char *outfile;
 
-    if (!parse_command(line, args, &outfile)) return;
+    if (!parse_command(line, args, &outfile)) {
+        print_error();
+        return;
+    }
     if (args[0] == NULL) return;
 
     // *Built-in Commands*
