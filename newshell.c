@@ -23,8 +23,6 @@
 char *list_path[MAX_ARGS];
 int count_path = 0;
 
-//Array for history
-
 //Error message
 void print_error() //implemented by Pranav Dubey
 {
@@ -41,8 +39,6 @@ void trim_newline(char *line) // implemented by Mary Adeeko
     }
 }
 
-//History command
-
 //Execute commands
 void execute_command(char *line) // Implemented by Pranav Dubey
 {
@@ -54,22 +50,33 @@ void execute_command(char *line) // Implemented by Pranav Dubey
     if (!parse_command(line, args, &outfile)) return;
     if (args[0] == NULL) return;
 
+    // *Built-in Commands*
+
     // Exit
 
     // Cd
 
-    // Path
-    else if (strcmp(args[0], "path") == 0) // Implemented by Pranav Dubey
+    // Myhistory
+
+    // Path - Implemented by Pranav Dubey
+    else if (strcmp(args[0], "path") == 0)
     {
         set_path(args);
         return;
     }
 
-    // Myhistory
+    // *Advanced Features*
 
-    // Execute external command with redirection
+    // Signal handling
+
+    // Pipelining
+
+    // Alias
+
+    // Redirection - Implemented by Pranav Dubey
     execute_with_redirection(args, outfile);
 }
+
 
 
 //Main
