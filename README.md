@@ -16,7 +16,7 @@ role(s) or expertise they served in.
 |---------------------|---------------------------------------------------------------------------------------|
 | Mary Adeeko         | Implemented                                                                           |
 | Hema Thallapareddy  | Implemented                                                                           |
-| Pranav Dubey        | Implemented                                                                           |
+| Pranav Dubey        | Implemented parsing, path, and redirection                                            |
 | Luke Marlin         | Implemented                                                                           |
 
 ### Knows Bugs/Problems:
