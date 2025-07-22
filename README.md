@@ -15,7 +15,7 @@ role(s) or expertise they served in.
 | Name                | Role/Contribution                                                                     |
 |---------------------|---------------------------------------------------------------------------------------|
 | Mary Adeeko         | Implemented main, pipeline, and cd                                                    |
-| Hema Thallapareddy  | Implemented                                                                           |
+| Hema Thallapareddy  | Implemented main, exit, and signal handling                                           |
 | Pranav Dubey        | Implemented parsing, path, and redirection                                            |
 | Luke Marlin         | Implemented                                                                           |
 
