@@ -10,4 +10,4 @@
 
 int builtin_myhistory(char *line, void (*reexecute)(char *)) {
     return handle_myhistory(line, reexecute);
-
+}
