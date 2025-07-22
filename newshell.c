@@ -15,6 +15,7 @@
 #include "redirection.h"
 #include "parser.h"
 #include "pipe.h"
+#include "myhistory.h"
 
 #define MAX_ARGS 100
 #define MAX_HISTORY 100
