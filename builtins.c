@@ -20,4 +20,7 @@ int builtin_myhistory(char *line, void (*reexecute)(char *)) {
 
 }
 
-
+// Wrapper function to handle alias command
+int builtin_alias(char *line) {
+    return handle_alias(line);
+}
