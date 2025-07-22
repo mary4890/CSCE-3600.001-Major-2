@@ -4,11 +4,13 @@
 
 #ifndef BUILTINS_H
 #define BUILTINS_H
+#include "myhistory.h"
+
 
 // Exit command handler
 
 // Cd command handler
 
-// Myhistory command handler
+int builtin_myhistory(char *line, void (*reexecute)(char *));
 
 #endif
