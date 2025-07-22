@@ -13,7 +13,6 @@ int handle_exit(char **args) {
     return 0;
 }
 
-// Cd Command
 
 int builtin_myhistory(char *line, void (*reexecute)(char *)) {
     return handle_myhistory(line, reexecute);
