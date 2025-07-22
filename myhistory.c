@@ -1,6 +1,10 @@
 // myhistory.c
 //Luke Marlin
 // csce 3600
+// Handles the 'myhistory' built-in command:
+// - Lists up to 20 recent commands
+// - Clears history with '-c'
+// - Re-executes a past command with '-e <index>'
 
 
 #include <stdio.h>
