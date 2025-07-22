@@ -109,6 +109,18 @@ void execute_command(char *line) // Implemented by Pranav Dubey
 
 
     // Alias
+    // Check for alias command
+if (strcmp(args[0], "alias") == 0) {
+    handle_alias(args);
+    return;
+}
+
+// Replace command with alias command if it exists
+char *alias_cmd = get_alias_command(args[0]);
+if (alias_cmd != NULL) {
+    execute_command(alias_cmd);  // Or parse alias_cmd and replace args accordingly
+    return;
+}
 
     // Redirection - Implemented by Pranav Dubey
     execute_with_redirection(args, outfile);
