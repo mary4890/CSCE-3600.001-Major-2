@@ -12,12 +12,10 @@
 
 // Cd command handler
 
+//myhistory
 int builtin_myhistory(char *line, void (*reexecute)(char *));
-
-// Alias-related functions
-void handle_alias(char **args);
-char* get_alias_command(const char *name);
-void set_alias(char *name, char *command);
+// alias
+int builtin_alias(char *line);
 
 
 #endif
