@@ -90,6 +90,7 @@ void execute_command(char *line) // Implemented by Pranav Dubey
 {
     // Pass full command to handler
     handle_myhistory(line, execute_command);
+    add_history(line);
     return;
 }
 
