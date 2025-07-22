@@ -5,6 +5,7 @@
 #ifndef BUILTINS_H
 #define BUILTINS_H
 #include "myhistory.h"
+#include "alias.h"
 
 
 int handle_exit(char **args);
