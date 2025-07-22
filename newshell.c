@@ -50,7 +50,7 @@ void execute_command(char *line) // Implemented by Pranav Dubey
         return;
     }
 
-    // add_history(line); // Uncomment after myhistory is fully implemented
+    
 
     char *args[MAX_ARGS];
     char *outfile;
