@@ -14,6 +14,7 @@
 #include "path.h"
 #include "redirection.h"
 #include "parser.h"
+#include "pipe.h"
 
 #define MAX_ARGS 100
 #define MAX_HISTORY 100
@@ -42,6 +43,12 @@ void trim_newline(char *line) // implemented by Mary Adeeko
 //Execute commands
 void execute_command(char *line) // Implemented by Pranav Dubey
 {
+    //Check pipe first - Implemented by Mary Adeeko
+    if (strchr(line, '|') != NULL)
+    {
+        handle_pipeline(line);
+        return;
+    }
     // add_history(line); // Needs to be implemented in builtsin.c first before uncommenting this, otherwise program won't run on tests
 
     char *args[MAX_ARGS];
@@ -57,7 +64,26 @@ void execute_command(char *line) // Implemented by Pranav Dubey
 
     // Exit
 
-    // Cd
+    // Cd - Implemented by Mary Adeeko
+    if (strcmp(args[0], "cd") == 0)
+{
+    if (args[1] == NULL)
+    {
+        char *home = getenv("HOME");
+        if (home == NULL || chdir(home) !=0 )
+        {
+            print_error();
+        }
+    }
+    else
+    {
+        if (chdir(args[1]) != 0)
+        {
+            print_error();
+        }
+    }
+    return;
+}
 
     // Myhistory
 
@@ -72,7 +98,8 @@ void execute_command(char *line) // Implemented by Pranav Dubey
 
     // Signal handling
 
-    // Pipelining
+
+
 
     // Alias
 

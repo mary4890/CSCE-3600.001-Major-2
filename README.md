@@ -9,7 +9,7 @@
   
 ### Project Organization:
 Identify the responsibilities for each team member,
-including which operation he/she was responsible for and what
+including which operation they were responsible for and what
 role(s) or expertise they served in.
 
 | Name                | Role/Contribution                                                                     |
