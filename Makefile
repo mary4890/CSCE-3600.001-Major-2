@@ -8,7 +8,7 @@ CC = gcc
 CFLAGS = -Wall -g
 
 # Object files for all source modules - Implemented by Pranav Dubey
-OBJS = newshell.o parser.o path.o redirection.o builtins.o alias.o pipe.o signal_handler.o myhistory.o
+OBJS = newshell.o parser.o path.o redirection.o builtins.o alias.o pipe.o signal_handler.o myhistory.o alias.o
 
 # Default target: build the shell executable - Implemented by Pranav Dubey
 all: newshell
@@ -27,6 +27,7 @@ alias.o: alias.c alias.h
 pipe.o: pipe.c pipe.h
 signal_handler.o: signal_handler.c signal_handler.h
 myhistory.o: myhistory.c myhistory.h
+alias.o: alias.c alias.h
 
 
 # Clean target to remove compiled files - Implemented by Pranav Dubey
