@@ -15,7 +15,6 @@
 #include "redirection.h"
 #include "parser.h"
 #include "pipe.h"
-#include "myhistory.h"
 
 #define MAX_ARGS 100
 #define MAX_HISTORY 100
@@ -87,6 +86,12 @@ void execute_command(char *line) // Implemented by Pranav Dubey
 }
 
     // Myhistory
+        else if (strncmp(args[0], "myhistory", 9) == 0)
+{
+    // Pass full command to handler
+    handle_myhistory(line, execute_command);
+    return;
+}
 
     // Path - Implemented by Pranav Dubey
     else if (strcmp(args[0], "path") == 0)
