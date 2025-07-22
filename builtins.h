@@ -12,5 +12,7 @@ int handle_exit(char **args);
 // Cd command handler
 
 int builtin_myhistory(char *line, void (*reexecute)(char *));
+int builtin_alias(char *line);
+
 
 #endif
