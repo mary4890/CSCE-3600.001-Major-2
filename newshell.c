@@ -15,7 +15,7 @@
 #include "redirection.h"
 #include "parser.h"
 #include "pipe.h"
-
+#include "signal_handler.h" 
 #define MAX_ARGS 100
 #define MAX_HISTORY 100
 #define MAX_LINE 512
@@ -31,7 +31,7 @@ void print_error() //implemented by Pranav Dubey
 }
 
 // Trimming newline
-void trim_newline(char *line) // implemented by Mary Adeeko
+void trim_newline(char *line) // Implemented by Mary Adeeko
 {
     size_t len = strlen(line);
     if (len > 0 && line[len - 1] == '\n')
@@ -49,7 +49,8 @@ void execute_command(char *line) // Implemented by Pranav Dubey
         handle_pipeline(line);
         return;
     }
-    // add_history(line); // Needs to be implemented in builtsin.c first before uncommenting this, otherwise program won't run on tests
+
+    // add_history(line); // Uncomment after myhistory is fully implemented
 
     char *args[MAX_ARGS];
     char *outfile;
@@ -62,37 +63,39 @@ void execute_command(char *line) // Implemented by Pranav Dubey
 
     // *Built-in Commands*
 
-    // Exit
+    // Exit - Implemented by Hema Thallapareddy
+    if (strcmp(args[0], "exit") == 0) {
+        handle_exit(args); 
+    }
 
     // Cd - Implemented by Mary Adeeko
     if (strcmp(args[0], "cd") == 0)
-{
-    if (args[1] == NULL)
     {
-        char *home = getenv("HOME");
-        if (home == NULL || chdir(home) !=0 )
+        if (args[1] == NULL)
         {
-            print_error();
+            char *home = getenv("HOME");
+            if (home == NULL || chdir(home) != 0)
+            {
+                print_error();
+            }
         }
-    }
-    else
-    {
-        if (chdir(args[1]) != 0)
+        else
         {
-            print_error();
+            if (chdir(args[1]) != 0)
+            {
+                print_error();
+            }
         }
+        return;
     }
-    return;
-}
 
-    // Myhistory
-        else if (strncmp(args[0], "myhistory", 9) == 0)
-{
-    // Pass full command to handler
-    handle_myhistory(line, execute_command);
-    add_history(line);
-    return;
-}
+    // Myhistory - Implemented by Luke Marlin
+    else if (strncmp(args[0], "myhistory", 9) == 0)
+    {
+        handle_myhistory(line, execute_command);
+        add_history(line);
+        return;
+    }
 
     // Path - Implemented by Pranav Dubey
     else if (strcmp(args[0], "path") == 0)
@@ -102,14 +105,7 @@ void execute_command(char *line) // Implemented by Pranav Dubey
     }
 
     // *Advanced Features*
-
-    // Signal handling
-
-
-
-
-    // Alias
-
+    
     // Redirection - Implemented by Pranav Dubey
     execute_with_redirection(args, outfile);
 }
@@ -119,6 +115,8 @@ void execute_command(char *line) // Implemented by Pranav Dubey
 //Main
 int main(int argc, char *argv[]) //implemented by Mary Adeeko
 {
+    // Signal Handling - Implemented by Hema Thallapareddy
+    setup_shell_signals(); 
     list_path[0] = "/bin";
     count_path = 1;
 
@@ -153,5 +151,3 @@ int main(int argc, char *argv[]) //implemented by Mary Adeeko
     }
     return 0;
 }
-
-

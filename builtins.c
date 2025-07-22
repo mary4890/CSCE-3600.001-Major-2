@@ -4,10 +4,18 @@
 #include "myhistory.h"
 #include "builtins.h"
 
-// Exit command
+int handle_exit(char **args) {
+    int status = 0;
+    if (args[1]) {
+        status = atoi(args[1]);
+    }
+    exit(status);
+    return 0;
+}
 
 // Cd Command
 
 int builtin_myhistory(char *line, void (*reexecute)(char *)) {
     return handle_myhistory(line, reexecute);
 
+}

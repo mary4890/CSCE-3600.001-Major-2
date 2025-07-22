@@ -7,7 +7,7 @@
 #include "myhistory.h"
 
 
-// Exit command handler
+int handle_exit(char **args);
 
 // Cd command handler
 
