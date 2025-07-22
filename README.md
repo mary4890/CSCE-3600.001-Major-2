@@ -17,7 +17,7 @@ role(s) or expertise they served in.
 | Mary Adeeko         | Implemented main, pipeline, and cd                                                    |
 | Hema Thallapareddy  | Implemented main, exit, and signal handling                                           |
 | Pranav Dubey        | Implemented parsing, path, and redirection                                            |
-| Luke Marlin         | Implemented                                                                           |
+| Luke Marlin         | Implemented main,alias,myhistory                                                                         |
 
 ### Knows Bugs/Problems:
 A list of any features that you did not implement
