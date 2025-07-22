@@ -1,4 +1,7 @@
 // myhistory.c
+//Luke Marlin
+// csce 3600
+
 
 #include <stdio.h>
 #include <stdlib.h>
